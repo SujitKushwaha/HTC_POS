@@ -60,6 +60,7 @@ html,body
 	height:75%;
 	background:white;
 	margin-left:20px;
+	overflow-y:scroll;
 }
 #second-one-three
 {
@@ -177,7 +178,60 @@ html,body
 	width: 98.25%;
 	height:88%;
 }
-
+ #itemname
+ {
+ text-indent: 2vw;
+ font-size:1.5vw;
+  float:left;
+ left:15vw;
+ }
+  #itemrate
+{
+ font-size:1.5vw;
+ float:left;
+ left:20vw; 
+ position:absolute;
+ text-align:right;
+ }
+  #itemqty
+{
+ font-size:1.5vw;
+ float:left;
+ left:5vw; 
+ }
+ #myrow
+{
+	width:100%;
+	background-color:white;
+	border-style:groove;
+	border-width:2px;
+	height:5vh;
+    color:#542437;
+	border-top:white;
+	border-right:white;
+	border-left:white;
+	border-bottom:white;
+	position:relative;
+	text-align:center;
+	border-color: grey;
+	float:left;
+}
+#mytotal
+{
+	width:100%;
+	background-color:white;
+	border-style:groove;
+	border-width:2px;
+	height:5vh;
+    color:#542437;
+	border-bottom:white;
+	border-right:white;
+	border-left:white;
+	position:relative;
+	text-align:center;
+	border-color: grey;
+	float:left;
+}
 button[type="logoButton"]
 {
 	height:65%;

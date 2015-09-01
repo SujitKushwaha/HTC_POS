@@ -32,8 +32,16 @@
 				<div id="second-one-one">
 				</div>
 				<div id="second-one-two">
-				
-				
+					<div id="myrow" ng-repeat="item in myCart">
+						<span id="itemqty">{{item.qty}}</span>
+						<span id="itemname">{{item.name}}</span>
+						<span id="itemrate">{{item.rate|currency}}</span>
+						<br/>
+					</div>
+					<div id="mytotal" ng-hide="totalHideFlag">
+					<span id="itemqty">Total</span>
+					<span id="itemrate">{{total|currency}}</span><br /><br />
+				</div>
 				</div>
 				<div id="second-one-three">
 					<button type="leftButton" style="background-color:#47B5B5;">Memory Off</button> 
@@ -49,7 +57,7 @@
 						<form name="myFormNg" ng-submit="okpress()">
 							<input type="text" name="formid" ng-model="btnstring" id="tb1" autofocus required>
 							<br />
-							<input type="button"  name="Submit" value=" Apply " style="position: absolute; height: 0px; width: 0px; border: none; padding: 0px;" hidefocus="false" tabindex="-1" />
+							<input type="button"  name="Submit" value=" Apply " style="position: absolute; height: 0px; width: 0px; border: none; padding: 0px;" hidefocus="true" tabindex="-1" />
 						</form>
 						<!--<input type="text" id="tb1" ng-model="btnstring"></input>-->
 					</div>
@@ -95,45 +103,45 @@
 				<div id="Row2" ng-hide="hideRow2Flag">
 					<div id="Option-row1">
 						<button type="optionButton" ng-click="allCupsItems()" style="background-color:#8F8F6A;">All Cups</button> 
-						<button type="optionButton" ng-click="btnpress(8)" style="background-color:orange;">AM Food</button>
-						<button type="optionButton" ng-click="btnpress(9)" style="background-color:red;">Item Sale</button>
+						<button type="optionButton"  style="background-color:orange;">AM Food</button>
+						<button type="optionButton"  style="background-color:red;">Item Sale</button>
 					</div>
 					<div id="Option-row2">
-						<button type="optionButton" ng-click="btnpress(4)" style="background-color:#8F8F6A;">Ice</button>
-						<button type="optionButton" ng-click="btnpress(5)" style="background-color:orange;">PM Food</button>
-						<button type="optionButton" ng-click="btnpress(6)" style="background-color:red;">Item Void</button>
+						<button type="optionButton"  style="background-color:#8F8F6A;">Ice</button>
+						<button type="optionButton"  style="background-color:orange;">PM Food</button>
+						<button type="optionButton"  style="background-color:red;">Item Void</button>
 					</div>
 					<div id="Option-row3">
-						<button type="optionButton" ng-click="btnpress(1)" style="background-color:#8F8F6A;">MO</button>
-						<button type="optionButton" ng-click="btnpress(2)" style="background-color:orange;">Lotto Win</button>
-						<button type="optionButton" ng-click="btnpress(3)" style="background-color:red;">Auth Gas</button>
+						<button type="optionButton"  style="background-color:#8F8F6A;">MO</button>
+						<button type="optionButton" style="background-color:orange;">Lotto Win</button>
+						<button type="optionButton"  style="background-color:red;">Auth Gas</button>
 					</div>
 					<div id="Option-row4">
-						<button  type="optionButton" ng-click="btnpress(0)" style="background-color:#8F8F6A;">Other Dept</button>
-						<button type="optionButton" ng-click="btnpress(0)" style="background-color:orange;">Lotto Sale</button>
-						<button type="optionButton"  ng-click="btnpress(0)" style="background-color:red;">PLU Item</button>
+						<button  type="optionButton"  style="background-color:#8F8F6A;">Other Dept</button>
+						<button type="optionButton" style="background-color:orange;">Lotto Sale</button>
+						<button type="optionButton" style="background-color:red;">PLU Item</button>
 					</div>
 					<div id="Option-row5">
-						<button type="optionButton" ng-click="btnpress(0)" style="background-color:#8F8F6A;">Safe</button>
-						<button type="optionButton" ng-click="btnpress(0)" style="background-color:orange;">No Sale</button>
-						<button type="optionButton" ng-click="btnpress(0)" style="background-color:red;">Void Trans</button>
+						<button type="optionButton"  style="background-color:#8F8F6A;">Safe</button>
+						<button type="optionButton"  style="background-color:orange;">No Sale</button>
+						<button type="optionButton"  style="background-color:red;">Void Trans</button>
 					</div>
 				</div>
 				<div id="Row2" ng-hide="!hideRow2Flag">
 					
 					<div id="Option-row1">
-						<button type="optionButton" style="background-color:#8F8F6A;">Slurpee Small</button> 
-						<button type="optionButton" style="background-color:#8F8F6A;">Slurpee Medium</button>
-						<button type="optionButton" style="background-color:#8F8F6A;">Slurpee Large</button>
+						<button type="optionButton" ng-click="addItemToCart(1)" style="background-color:#8F8F6A;">Slurpee Small</button> 
+						<button type="optionButton" ng-click="addItemToCart(2)" style="background-color:#8F8F6A;">Slurpee Medium</button>
+						<button type="optionButton" ng-click="addItemToCart(3)" style="background-color:#8F8F6A;">Slurpee Large</button>
 					</div>
 					<div id="Option-row2">
-						<button type="optionButton" style="background-color:#8F8F6A;">Coffee Small</button>
-						<button type="optionButton" style="background-color:#8F8F6A;">Coffee Medium</button>
-						<button type="optionButton" style="background-color:#8F8F6A;">Coffee Large</button>
+						<button type="optionButton" ng-click="addItemToCart(4)" style="background-color:#8F8F6A;">Coffee Small</button>
+						<button type="optionButton" ng-click="addItemToCart(5)" style="background-color:#8F8F6A;">Coffee Medium</button>
+						<button type="optionButton" ng-click="addItemToCart(6)" style="background-color:#8F8F6A;">Coffee Large</button>
 					</div>
 				</div>
 				<div id="Row3">
-					<button type="finalizeButton"  ng-click="btnpress(0)" >Finalize</button>
+					<button type="finalizeButton"  >Finalize</button>
 				</div>
 			</div>
 		</div>
